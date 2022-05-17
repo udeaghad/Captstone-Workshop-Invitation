@@ -1,0 +1,399 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+                                                    
+}
+
+$backColor:#272a31;
+$orangeColor: #ec5242;
+$ashColor: #d3d3d3;
+$latoFont:'Lato', sans-serif;
+$cocoFont:'COCOGOOSE', sans-serif;
+
+@mixin flexDisplay($direction: column){
+    display: flex;
+    flex-direction: $direction;
+    
+}
+
+.home-page {
+    margin: 0;
+    .heading {
+        margin: 0 24px;
+    }  
+    
+}
+
+header {
+    width: 100%;
+    margin: 48px 0;
+}
+
+.nav-bar {
+    width: 20px;
+    height: 25px;
+    //position: fixed;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    //transition: right 8s ease;
+  }
+
+  .bar {
+    height: 3px;
+    margin: 3px;
+    background-color:$backColor;
+    width: 100%;
+    border-radius: 10px;
+    //transition: all 0.8s;
+
+  }
+
+  .page-topic {
+      color: $orangeColor;
+      margin: 24px 0;
+      @include flexDisplay();
+      align-items: left;
+      justify-content: center;
+      //gap: 5px;
+      h1 {
+          font-family: $cocoFont;
+          font-size: 18px;
+          font-weight: normal;                  
+      }
+      p {
+          font-size: 16px;
+          font-family: $latoFont;
+        font-weight: bolder;
+      }
+
+  }
+
+  .intro-descr {
+      margin: 24px 10px;
+      width: 90%;
+      border: 3px black solid;
+      padding: 10px;
+      background-color: none;
+      p {
+          color: $backColor;
+          font-family: $latoFont;
+          font-weight: bolder;
+          font-size: 12px;
+          line-height: 24px;
+          margin-right: 12px;
+
+      }
+  }
+
+  .when {
+      margin-bottom: 60px;
+    h2 {              
+        color: $backColor; 
+        font-size: 18px; 
+        font-family: $cocoFont; 
+        font-weight: normal;     
+    }
+
+    p {
+        font-family: $latoFont;
+        color: $backColor;
+        font-size: 14px;
+        font-weight: bold;
+    }
+  }
+
+.main-prog {
+      background-color: black;
+      @include flexDisplay(column);
+      justify-content: center;
+      align-items: center;
+
+      .program-heading {
+        h3 {
+            font-family: $cocoFont;
+            color: white;
+            margin: 36px;
+            font-weight: normal;
+         }  
+       } 
+       .prog-list {
+        width: 95%;
+        height: 100%;
+        background-color:$backColor;
+        margin: 5px 10px;
+        @include flexDisplay(row);
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        padding: 12px;
+
+        
+        img {
+            height: 48px;
+            width: 48px;
+            color: $backColor;
+                        
+        }
+
+        h4 {
+            color:$orangeColor;
+            font-weight: 600;
+            font-family: $latoFont;
+
+        }
+
+        p {
+            width: 60%;
+            color: white;
+            font-family: $latoFont;
+            font-weight: 600;
+            font-size: 12px;
+        }
+
+    } 
+
+    .join-us {
+        background-color: $orangeColor;
+        color: white;
+        width: 80%;
+        height: 80px;
+        margin: 32px 0;
+        @include flexDisplay();
+        justify-content: center;
+        align-items: center;
+        p {
+            font-family: $cocoFont;
+            font-size: 18px;
+            font-weight: 100;
+        }
+    }
+}
+
+
+.speakers {
+    margin: 48px;
+    background-color: white;
+    border: 1px solid red
+}
+
+.about-page {
+    @include flexDisplay();
+    justify-content: center;
+    align-items: center;
+}
+
+.about-home {
+    @include flexDisplay();
+    margin-top: 24px;
+    align-items: center;
+    justify-content: center;
+    background-color: $ashColor;
+    .page-topic{
+       justify-content: center;
+       align-items: center;
+       h1 {
+           font-family: $cocoFont;
+           text-align: center;
+           margin: 0 12px;
+       }
+
+       p {
+           font-family: $latoFont;
+           margin: 12px;
+           font-weight: bold;
+       }
+    }
+    .about-descr {
+        text-align: center; 
+        border: 3px solid rgb(197, 197, 197);
+        width: 80%;
+        background-color: white;      
+
+        p {
+            font-family: $latoFont;
+            font-weight: 600;
+            color: $backColor;
+          font-size: 16px;
+          line-height: 24px;
+          margin: 24px 5px;
+        }
+    }
+
+    
+         
+    p {
+            margin: 24px 18px;
+            font-family: $latoFont;
+            font-weight: 600;
+            text-align: center;
+            line-height: 30px;
+            span {
+                text-decoration: underline;
+                font-weight: 900;
+            }
+    }
+    
+}
+
+.creative {
+    //margin: 48px;
+    @include flexDisplay();
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid $ashColor;
+
+   h2 {
+       text-align: center;
+       color: $backColor;
+       font-family: $latoFont;
+       font-size: 18px;
+       font-weight: bold;
+       
+       margin: 32px 48px 24px 48px;
+   }
+
+   p {
+       margin: 0 48px 24px 48px;
+       font-family: $latoFont;
+       font-size: 11px;
+       font-weight: 600;
+       text-align: center;
+    }
+
+    .logo {
+        width: 85%;
+        border: 1px solid $ashColor;
+        margin: 32px 0;
+        @include flexDisplay();
+        justify-content:center;
+        align-items: center;
+        padding: 12px;
+    }
+}
+
+.past-summit {
+    @include flexDisplay();
+    justify-content: center;
+    align-items: center;
+    width: 85%;
+    margin-top: 24px;
+    h2 {
+        text-align: center;
+        font-family: $latoFont;
+        font-size: 16px;
+        font-weight: bold;
+        color: $backColor;       
+    }
+
+    p {
+        text-align: center;
+        font-family: $latoFont;
+        font-size: 11px;
+        font-weight: 600;
+        margin: 24px 0;
+    }
+
+    .workshop-img {
+        @include flexDisplay();
+        gap: 12px;      
+        margin-bottom: 12px;
+        
+        .img-1 {
+            width: 100%;
+           height: 100%;
+            
+        }
+
+        .img-2 {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    }
+
+    .partner {
+        background-color: #272a31;
+       width: 100%;
+       
+        h3 {
+            margin-top: 18px;
+            color: $ashColor;
+            text-align: center;
+            font-family: $latoFont;
+            font-weight: 600;
+            font-size: 16px;
+        }
+        .logo-img {
+          @include flexDisplay(row);
+          justify-content: space-around;
+          align-items: center;
+          width: 100%;
+          flex-wrap: wrap;
+          gap: 10px;
+          padding: 12px;
+
+        div {
+            .mozilla {
+            width: 40px;
+            height: 50px;            
+            margin: 10px;
+        }
+
+        .google {
+            width: 40px;
+            height: 50px; 
+            color: $ashColor;        
+        }
+
+        .microsoft {
+            width: 40px;            
+            height: 50px; 
+        }
+
+        .android {
+            width: 50px;
+            height: 60px;
+           margin: 10px;
+        }
+        .airbnb {
+            width: 40px;
+            height: 50px;
+        }
+
+        .edge {
+            width: 40px;
+            height: 50px;
+        }
+      }
+     }
+    }
+    
+    footer {
+        @include flexDisplay(row); 
+        justify-content: space-around;
+        width: 100%;
+       //gap:50px;
+        .footer-logo {
+            padding: 10px;
+           
+            img{
+            width: 50px;
+            }
+        }
+
+        .footer-text {
+            font-family: $latoFont;
+            color: $backColor;
+            font-size: 10px;
+            font-weight: 600;
+            align-self: flex-end;
+            justify-self: flex-end;
+            padding: 10px;
+        }
+    }
+
+    
+
