@@ -372,6 +372,7 @@ header {
           font-size: 12px;
           line-height: 24px;
           margin: 24px 5px;
+          
         }
     }
 
@@ -382,7 +383,8 @@ header {
             font-family: $latoFont;
             font-weight: 600;
             text-align: center;
-            line-height: 30px;
+            line-height: 20px;
+            font-size: 12px;
             span {
                 text-decoration: underline;
                 font-weight: 900;
@@ -402,7 +404,7 @@ header {
        text-align: center;
        color: $backColor;
        font-family: $latoFont;
-       font-size: 18px;
+       font-size: 21px;
        font-weight: bold;
        
        margin: 32px 48px 24px 48px;
@@ -457,7 +459,7 @@ header {
         align-items: center;
         
         .img-1 {
-            width: 90%;
+            width: 90%;       
          
         }  
         .cover {
@@ -468,11 +470,17 @@ header {
         
 
         .img-2 {
-            width: 90%;          
+            width: 90%;      
                    
         }
     }
 
+    }
+
+    .grpImage-cont {
+        width: 100%;
+        height: 100%;
+        
     }
 
     .partner {
@@ -534,11 +542,11 @@ header {
     
     footer {
         @include flexDisplay(row); 
-        justify-content: space-around;
+        justify-content: center;
         width: 100%;
-       //gap:50px;
+        //gap:20px;
         .footer-logo {
-            padding: 10px;
+            padding: 4px;
            
             img{
             width: 50px;
@@ -565,6 +573,10 @@ header {
     }
 
     .see-list {
+        display: none;
+    }
+
+    .desktop-text {
         display: none;
     }
 
@@ -765,6 +777,89 @@ header {
                margin: 0 65px;
            }
         }
+
+        .about-page {
+            .about-home {
+              margin-top: 48px;
+              .page-topic {
+                  margin-top: 150px;
+                p{
+                    display: none;
+                }
+
+                h1 {
+                    font-size: 38px;
+                    width: 515px;
+                }
+            }
+            .about-descr {
+                width: 60%;
+            }
+          }          
+
+          p{
+              margin-bottom: 70px;
+              //font-size: 14px;
+          }
+    }
+
+    .mobile-text {
+        display: none;
+    }
+
+    .desktop-text {
+        display: block;
+    }
+
+    .creative {
+        margin-bottom: 14px;
+        p {
+            width: 65%;
+            line-height: 15px;
+        }   
+
+        .logo {
+            margin: 0;
+            width: 45%;
+            margin-bottom: 40px;
+        }
+    }
+
+    .past-summit {
+        h2 {
+            font-size: 24px;
+        }
+
+        p{
+            font-size: 12px;
+        }
+        .workshop-img {
+            @include flexDisplay(row);
+            width: 70%;
+            gap: 0;
+        }
+    }
+
+    .partner {
+        display: none;
+    }
+
+    footer {
+        background-color: #272a31;
+        height: 100px;
+
+        .footer-logo {
+            align-self: center;
+            justify-self: center;
+        }
+
+        .footer-text {
+            color: $ashColor;
+            font-size: 10px;
+            align-self: center;
+            justify-self: center;
+        }
+    }
         
        } 
     

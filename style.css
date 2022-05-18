@@ -465,7 +465,8 @@ header {
   font-family: "Lato", sans-serif;
   font-weight: 600;
   text-align: center;
-  line-height: 30px;
+  line-height: 20px;
+  font-size: 12px;
 }
 
 .about-home p span {
@@ -494,7 +495,7 @@ header {
   text-align: center;
   color: #272a31;
   font-family: "Lato", sans-serif;
-  font-size: 18px;
+  font-size: 21px;
   font-weight: bold;
   margin: 32px 48px 24px 48px;
 }
@@ -593,6 +594,11 @@ header {
   width: 90%;
 }
 
+.grpImage-cont {
+  width: 100%;
+  height: 100%;
+}
+
 .partner {
   background-color: #272a31;
   width: 100%;
@@ -668,13 +674,14 @@ footer {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 100%;
 }
 
 footer .footer-logo {
-  padding: 10px;
+  padding: 4px;
 }
 
 footer .footer-logo img {
@@ -701,6 +708,10 @@ footer .footer-text {
 }
 
 .see-list {
+  display: none;
+}
+
+.desktop-text {
   display: none;
 }
 
@@ -935,6 +946,83 @@ footer .footer-text {
         grid-template-rows: 1fr 1fr 1fr;
     width: 80%;
     margin: 0 65px;
+  }
+  .about-page .about-home {
+    margin-top: 48px;
+  }
+  .about-page .about-home .page-topic {
+    margin-top: 150px;
+  }
+  .about-page .about-home .page-topic p {
+    display: none;
+  }
+  .about-page .about-home .page-topic h1 {
+    font-size: 38px;
+    width: 515px;
+  }
+  .about-page .about-home .about-descr {
+    width: 60%;
+  }
+  .about-page p {
+    margin-bottom: 70px;
+  }
+  .mobile-text {
+    display: none;
+  }
+  .desktop-text {
+    display: block;
+  }
+  .creative {
+    margin-bottom: 14px;
+  }
+  .creative p {
+    width: 65%;
+    line-height: 15px;
+  }
+  .creative .logo {
+    margin: 0;
+    width: 45%;
+    margin-bottom: 40px;
+  }
+  .past-summit h2 {
+    font-size: 24px;
+  }
+  .past-summit p {
+    font-size: 12px;
+  }
+  .past-summit .workshop-img {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    width: 70%;
+    gap: 0;
+  }
+  .partner {
+    display: none;
+  }
+  footer {
+    background-color: #272a31;
+    height: 100px;
+  }
+  footer .footer-logo {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    -ms-grid-column-align: center;
+        justify-self: center;
+  }
+  footer .footer-text {
+    color: #d3d3d3;
+    font-size: 10px;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    -ms-grid-column-align: center;
+        justify-self: center;
   }
 }
 /*# sourceMappingURL=style.css.map */
