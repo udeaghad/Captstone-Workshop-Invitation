@@ -5,6 +5,12 @@
                                                     
 }
 
+main {
+    display: grid;
+    flex-direction: column;
+    max-width: 100%;
+}
+
 $backColor:#272a31;
 $orangeColor: #ec5242;
 $ashColor: #d3d3d3;
@@ -17,42 +23,133 @@ $cocoFont:'COCOGOOSE', sans-serif;
     
 }
 
-.home-page {
-    margin: 0;
-    .heading {
-        margin: 0 24px;
-    }  
-    
-}
 
 header {
+    @include flexDisplay();
+    justify-content: flex-start;
+    align-items: center;
+    height: 50px;
+    background-color: white;
     width: 100%;
-    margin: 48px 0;
+    position: fixed;
+    margin: 0;
+    //top: 0;
+    //left: 0;
+    
+}
+.menu-bar {
+    @include flexDisplay();
+    width: 100%;
+  top: 0;
+  width: 100%;
+  right: -100%;
+  position: fixed;
+  background-color: $backColor;
+  height: 100vh;
 }
 
-.nav-bar {
-    width: 20px;
-    height: 25px;
-    //position: fixed;
-    top: 0;
-    left: 0;
-    cursor: pointer;
-    //transition: right 8s ease;
+.nav-heading {
+    display: flex;
+    justify-content: space-between;
+    padding: 24px 24px;
+  }
+
+  .nav-bar {
+    width: 25px;
+    height: 30px;
+   position: fixed;
+   top: 15px;
+   left:15px;
+   cursor: pointer;
+   transition: right 8s ease;
   }
 
   .bar {
-    height: 3px;
+    height: 4px;
     margin: 3px;
-    background-color:$backColor;
+    background-color: black;
     width: 100%;
-    border-radius: 10px;
-    //transition: all 0.8s;
+    transition: all 0.8s;
+  }
 
+
+   .change .line-1 {
+    transform: rotateZ(-45deg) translate(-6px, 4px);
+    background-color: $ashColor;
+  }
+  
+   .change .line-2 {
+    opacity: 0;
+  }
+  
+  .change .line-3 {
+    transform: rotateZ(45deg) translate(-6px, -4px);
+    background-color: $ashColor;
+   
+  }
+  
+  .change {
+    left: 0;
+  }
+
+  .nav-list {
+    text-align: left;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    font-size: 32px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: $backColor;
+    position: relative;
+    padding: 0;
+  }
+  
+  .nav-item {
+      background-color: $ashColor;
+    list-style: none;
+    margin: 1px;
+    padding: 10px;
+    height: 60px;
+    align-self: center;
+    
+  }
+  
+  .nav-link::before,
+  .nav-link::after {
+    content: "";
+    width: 100%;
+    height: 3px;
+    background-color: $backColor;
+    position: absolute;
+    transform: scaleX(0);
+    transition: 0.5s;
+    left: 0;
+  }
+  
+  .nav-link::after {
+    bottom: 0;
+    transform-origin: right;
+  }
+  
+  .nav-link::before {
+    top: 0;
+    transform-origin: left;
+  }
+  
+  .nav-link:hover::before,
+  .nav-link:hover::after {
+    transform: scaleX(1);
+  }
+
+
+  .home-page {
+      margin-top: 65px;
   }
 
   .page-topic {
       color: $orangeColor;
-      margin: 24px 0;
+      margin: 12px 14px;
       @include flexDisplay();
       align-items: left;
       justify-content: center;
@@ -71,23 +168,24 @@ header {
   }
 
   .intro-descr {
-      margin: 24px 10px;
-      width: 90%;
-      border: 3px black solid;
-      padding: 10px;
+      margin: 24px;
+      width: 85%;
+      border: 3px solid $ashColor;
+     
       background-color: none;
       p {
           color: $backColor;
           font-family: $latoFont;
           font-weight: bolder;
-          font-size: 12px;
-          line-height: 24px;
-          margin-right: 12px;
+          font-size: 10px;
+          line-height: 20px;
+          margin: 12px;
 
       }
   }
 
   .when {
+      margin: 0 12px;
       margin-bottom: 60px;
     h2 {              
         color: $backColor; 
@@ -131,8 +229,8 @@ header {
 
         
         img {
-            height: 48px;
-            width: 48px;
+            height: 28px;
+            //width: 48px;
             color: $backColor;
                         
         }
@@ -141,7 +239,7 @@ header {
             color:$orangeColor;
             font-weight: 600;
             font-family: $latoFont;
-
+            font-size: 13px;
         }
 
         p {
@@ -149,7 +247,7 @@ header {
             color: white;
             font-family: $latoFont;
             font-weight: 600;
-            font-size: 12px;
+            font-size: 10px;
         }
 
     } 
@@ -157,26 +255,82 @@ header {
     .join-us {
         background-color: $orangeColor;
         color: white;
-        width: 80%;
-        height: 80px;
+        width: 70%;
+        height: 50px;
         margin: 32px 0;
         @include flexDisplay();
         justify-content: center;
         align-items: center;
         p {
-            font-family: $cocoFont;
-            font-size: 18px;
-            font-weight: 100;
+            font-family: $latoFont;
+            font-size: 12px;
+            font-weight: 600;
         }
     }
 }
 
 
 .speakers {
-    margin: 48px;
+   width: 100%;
     background-color: white;
-    border: 1px solid red
+    //border: 1px solid red;
+    margin: 24px 0;
+    .f-speaker {
+        color:$backColor;
+        font-family: $latoFont;
+        text-align: center;
+        font-weight: 600;
+        font-size: 18px;
+        margin-bottom: 24px;
+        
+    }
+
+    .speaker-content {
+        width: 95%;
+        height: 100px;
+        @include flexDisplay(row);
+        gap: 5px;
+
+    .photo {
+        margin: 10px;
+        img {
+        
+            height: 90px;
+        }
+    }
+
+    .speaker-details {
+        @include flexDisplay();
+        margin: 10px 0 0 0;
+        
+        .speaker-name {
+        font-family: $latoFont;
+          font-size: 14px;
+          font-weight: 600;
+        }
+
+        .speaker-about {
+            font-family: $latoFont;
+            font-weight: 600;
+            font-style: italic;
+            color: #ec5242;
+            font-size: 10px;
+            margin-bottom: 12px;
+        }
+
+        .speaker-story {
+            font-family: $latoFont;
+            font-weight: 600;
+            font-size: 8px;
+        }
+    }
+
+    }
+
+   
 }
+
+
 
 .about-page {
     @include flexDisplay();
@@ -215,7 +369,7 @@ header {
             font-family: $latoFont;
             font-weight: 600;
             color: $backColor;
-          font-size: 16px;
+          font-size: 12px;
           line-height: 24px;
           margin: 24px 5px;
         }
@@ -299,16 +453,23 @@ header {
         @include flexDisplay();
         gap: 12px;      
         margin-bottom: 12px;
+        justify-content: center;
+        align-items: center;
         
         .img-1 {
-            width: 100%;
-           height: 100%;
-            
+            width: 90%;
+         
+        }  
+        .cover {
+            font-family: $latoFont;
+            color: $orangeColor;
+            font-weight: 600;
         }
+        
 
         .img-2 {
-            width: 100%;
-            height: 100%;
+            width: 90%;          
+                   
         }
     }
 
@@ -344,7 +505,7 @@ header {
 
         .google {
             width: 40px;
-            height: 50px; 
+            height: 40px; 
             color: $ashColor;        
         }
 
@@ -394,6 +555,219 @@ header {
             padding: 10px;
         }
     }
+
+    .desktop-container {
+        display: none;
+    }
+
+    .logo-container {
+        display: none;
+    }
+
+    .see-list {
+        display: none;
+    }
+
+    @media screen and (min-width: 768px) {
+       header {
+           height: 80px;
+           .container{
+               display: none;
+           }
+
+           .desktop-container {
+               @include flexDisplay();
+               height: 25px;
+               background-color: $backColor;
+               width: 100%;
+               ul {
+                   @include flexDisplay(row);
+                   justify-content: flex-end;
+                   align-items: center;
+                   gap: 20px;
+                   margin-right: 12%;
+
+               
+               .facebook {
+                   width: 10px;
+                   object-fit: contain;
+                   list-style: none;
+                   img {
+                       width: 10px;
+                   }
+                }
+                .twitter {
+                    width: 10px;
+                    object-fit: contain;
+                    list-style: none;
+                    img {
+                        width: 18px;
+                    }
+                }
+                .english,
+                .my-page,
+                .logout {
+                    list-style: none;
+                    a {
+                    text-decoration: none;
+                    color: $ashColor;
+                    font-family: $latoFont;
+                    font-weight: 600;
+                    font-size: 12px;
+                    }
+
+                }
+               }
+               }
+            .logo-container {
+                width: 100%;
+                height: 55px;
+                background-color: white;
+                @include flexDisplay();
+                justify-content: center;
+                //align-items: center;
+                ul {
+                    @include flexDisplay(row);
+                    justify-content: center;
+                   align-items: center;
+                   gap: 30px;
+                   margin: 0 12%;
+                   .logo-pics {
+                       list-style: none;
+                       object-fit: contain;
+                       width: 60px;
+                       margin-right: 21%;
+                       margin-top: 3px;
+                       img {
+                           width: 100%;
+                       }
+
+                   }
+                   .header-about,
+                   .header-prog,
+                   .header-join,
+                   .header-sponsor,
+                   .header-News {
+                       list-style: none;
+                       a {
+                        text-decoration: none;
+                        color: $backColor;
+                        font-family: $latoFont;
+                        font-weight: 600;
+                        font-size: 12px;
+                       }
+                   }
+
+                   .header-camp {
+                    list-style: none;
+                    border: 3px solid $orangeColor;
+                    height: 45px;
+                    padding: 3px;
+                    a {
+                        font-size: 14px;                       
+                        text-decoration: none;
+                        color: $orangeColor;
+                        margin-top: 2px;
+                    }
+                   
+                }
+                }
+            }
+           }
+
+        .home-page {
+            margin-top: 100px;
+
+            .page-topic {
+                margin: 75px 125px 12px 125px;
+                p{
+                    font-size: 30px;
+                }
+
+                h1 {
+                    font-size: 38px;
+                    width: 515px;
+                }
+            }
+           .intro-descr {
+            margin-left: 120px;
+            margin-right: 185px;
+            width: 50%;
+            p {
+                font-size: 10px;
+                line-height: 20px;
+                margin: 10px;
+            }
+           }
+
+           .when {
+            margin: 0px 120px;
+            margin-bottom: 85px;
+            h2 {
+                font-size: 25px;
+            }
+            p {
+                font-size: 16px;
+            }
+           }
+
+           .main-prog {
+               .program-heading{
+                   h3 {
+                       font-family: $latoFont;
+                       font-weight: 600;
+                   }
+               }
+              
+               .prog-list-cont {
+                   //@include flexDisplay();
+                   display: grid;
+                   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+                   justify-content: center;
+                   align-items: center;
+                   width: 700px;
+                   margin-bottom: 60px;
+                   .prog-list {
+                       @include flexDisplay();
+                       width: 98%;
+                       padding: 10px;
+                       gap: 0;
+                       p {
+                        width: 90%;
+                        text-align: center;
+                       }
+                    
+                   }
+               }
+
+               .join-us {
+                display: none;
+            }
+
+            .see-list {
+                display: block;
+                margin-bottom: 60px;
+                a {
+                 text-decoration: underline;
+                  font-family: $latoFont;
+                  color: $ashColor;
+                  font-weight: 600;
+                  font-size: 12px;
+                }
+            }
+           }
+        
+           .speaker-items {
+               display: grid;
+               grid-template-columns: 1fr 1fr;
+               grid-template-rows: 1fr 1fr 1fr;
+               width: 80%;
+               margin: 0 65px;
+           }
+        }
+        
+       } 
+    
 
     
 
