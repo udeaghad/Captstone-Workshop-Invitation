@@ -737,6 +737,10 @@ header {
   height: 50px;
 }
 
+.partner-desk {
+  display: none;
+}
+
 footer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -803,9 +807,6 @@ footer .footer-text {
   display: none;
 }
 
-/*.partner {
-        display: none;
-    }*/
 @media screen and (min-width: 768px) {
   header {
     height: 80px;
@@ -904,7 +905,6 @@ footer .footer-text {
         -ms-flex-align: center;
             align-items: center;
     gap: 30px;
-    margin: 0 12%;
   }
   header .logo-container ul .logo-pics {
     list-style: none;
@@ -938,11 +938,13 @@ footer .footer-text {
   header .logo-container ul .header-camp {
     list-style: none;
     border: 3px solid #ec5242;
-    height: 45px;
+    height: 35px;
     padding: 3px;
   }
   header .logo-container ul .header-camp a {
-    font-size: 14px;
+    font-family: "Lato", sans-serif;
+    font-weight: 600;
+    font-size: 12px;
     text-decoration: none;
     color: #ec5242;
     margin-top: 2px;
@@ -1044,7 +1046,7 @@ footer .footer-text {
     margin-top: 48px;
   }
   .about-page .about-home .page-topic {
-    margin-top: 150px;
+    margin-top: 100px;
   }
   .about-page .about-home .page-topic p {
     display: none;
@@ -1073,6 +1075,9 @@ footer .footer-text {
     margin: 0;
     width: 45%;
     margin-bottom: 40px;
+  }
+  .past-summit {
+    padding-bottom: 76px;
   }
   .past-summit h2 {
     font-size: 24px;
@@ -1155,7 +1160,67 @@ footer .footer-text {
     margin: 3px;
   }
   .partner {
-    height: 160px;
+    display: none;
+  }
+  .partner-desk {
+    display: block;
+    padding-top: 18px;
+    background-color: #272a31;
+    width: 100%;
+  }
+  .partner-desk h3 {
+    margin: 20px 0;
+    color: #d3d3d3;
+    text-align: center;
+    font-family: "Lato", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+  }
+  .partner-desk .logo-img {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    gap: 10px;
+    padding: 12px;
+  }
+  .partner-desk .logo-img div .mozilla {
+    width: 40px;
+    height: 50px;
+    margin: 10px;
+  }
+  .partner-desk .logo-img div .google {
+    width: 40px;
+    height: 40px;
+    color: #d3d3d3;
+  }
+  .partner-desk .logo-img div .microsoft {
+    width: 40px;
+    height: 50px;
+  }
+  .partner-desk .logo-img div .android {
+    width: 50px;
+    height: 60px;
+    margin: 10px;
+  }
+  .partner-desk .logo-img div .airbnb {
+    width: 40px;
+    height: 50px;
+  }
+  .partner-desk .logo-img div .edge {
+    width: 40px;
+    height: 50px;
   }
   .footer-index {
     display: -ms-grid;
@@ -1212,6 +1277,14 @@ footer .footer-text {
     background-color: #d3d3d3;
   }
   .bg-image {
+    background-color: #d3d3d3;
+    opacity: 0.7;
+    position: absolute;
+    z-index: -1;
+    width: 104%;
+    height: 1197px;
+  }
+  .bg-image-about {
     background-color: #d3d3d3;
     opacity: 0.7;
     position: absolute;
