@@ -807,6 +807,24 @@ footer .footer-text {
   display: none;
 }
 
+.bg-image {
+  background-color: #d3d3d3;
+  opacity: 0.7;
+  position: absolute;
+  z-index: -1;
+  width: 104%;
+  height: 1197px;
+}
+
+.bg-image-about {
+  background-color: #d3d3d3;
+  opacity: 0.7;
+  position: absolute;
+  z-index: -1;
+  width: 104%;
+  height: 1197px;
+}
+
 @media screen and (min-width: 768px) {
   header {
     height: 80px;
@@ -1276,21 +1294,22 @@ footer .footer-text {
   .speakers {
     background-color: #d3d3d3;
   }
-  .bg-image {
-    background-color: #d3d3d3;
+  /* .bg-image {
+        background-color: #d3d3d3;
     opacity: 0.7;
     position: absolute;
     z-index: -1;
     width: 104%;
     height: 1197px;
-  }
-  .bg-image-about {
-    background-color: #d3d3d3;
+    }
+
+    .bg-image-about {
+        background-color: #d3d3d3;
     opacity: 0.7;
     position: absolute;
     z-index: -1;
     width: 104%;
     height: 1197px;
-  }
+    }*/
 }
 /*# sourceMappingURL=style.css.map */

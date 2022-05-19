@@ -680,6 +680,24 @@ header {
     .workshop-img-desk {
         display: none;
     }
+
+    .bg-image {
+        background-color: #d3d3d3;
+    opacity: 0.7;
+    position: absolute;
+    z-index: -1;
+    width: 104%;
+    height: 1197px;
+    }
+
+    .bg-image-about {
+        background-color: #d3d3d3;
+    opacity: 0.7;
+    position: absolute;
+    z-index: -1;
+    width: 104%;
+    height: 1197px;
+    }
     
 
     @media screen and (min-width: 768px) {
@@ -1146,7 +1164,7 @@ header {
         background-color: $ashColor;
     }
 
-    .bg-image {
+   /* .bg-image {
         background-color: #d3d3d3;
     opacity: 0.7;
     position: absolute;
@@ -1162,7 +1180,7 @@ header {
     z-index: -1;
     width: 104%;
     height: 1197px;
-    }
+    }*/
     
 
     
