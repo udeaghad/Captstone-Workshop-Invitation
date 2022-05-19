@@ -9,6 +9,11 @@ main {
     display: grid;
     flex-direction: column;
     max-width: 100%;
+    background-image: url("images/bg-image-3.png");
+      background-size: contain;
+      position: absolute;
+    z-index: -1;
+      
 }
 
 $backColor:#272a31;
@@ -29,10 +34,11 @@ header {
     justify-content: flex-start;
     align-items: center;
     height: 50px;
-    background-color: white;
+    //background-color: white;
     width: 100%;
     position: fixed;
     margin: 0;
+    z-index: 25;
     //top: 0;
     //left: 0;
     
@@ -44,7 +50,9 @@ header {
   width: 100%;
   right: -100%;
   position: fixed;
-  background-color: $backColor;
+  background-image: url("images/bg-image-3.png");
+  background-size: contain;
+  //background-color: $backColor;
   height: 100vh;
 }
 
@@ -67,15 +75,16 @@ header {
   .bar {
     height: 4px;
     margin: 3px;
-    background-color: black;
+    background-color: $backColor;
+    border-radius: 20px;
     width: 100%;
-    transition: all 0.8s;
+    transition: all 0.9s;
   }
 
 
    .change .line-1 {
     transform: rotateZ(-45deg) translate(-6px, 4px);
-    background-color: $ashColor;
+    background-color: $backColor;
   }
   
    .change .line-2 {
@@ -84,7 +93,7 @@ header {
   
   .change .line-3 {
     transform: rotateZ(45deg) translate(-6px, -4px);
-    background-color: $ashColor;
+    background-color: $backColor;
    
   }
   
@@ -98,15 +107,15 @@ header {
   
   .nav-link {
     text-decoration: none;
-    font-size: 32px;
+    font-size: 24px;
     font-family: Arial, Helvetica, sans-serif;
-    color: $backColor;
+    color: $orangeColor;
     position: relative;
     padding: 0;
   }
   
   .nav-item {
-      background-color: $ashColor;
+      background-color: white;
     list-style: none;
     margin: 1px;
     padding: 10px;
@@ -120,7 +129,7 @@ header {
     content: "";
     width: 100%;
     height: 3px;
-    background-color: $backColor;
+    background-color: $orangeColor;
     position: absolute;
     transform: scaleX(0);
     transition: 0.5s;
@@ -144,10 +153,17 @@ header {
 
 
   .home-page {
-      margin-top: 65px;
+      margin-top: 50px;
+      
   }
 
+  /*.bg-image {
+    background-image: url("images/bg-image-3.png");
+    
+  }*/
+
   .page-topic {
+    
       color: $orangeColor;
       margin: 12px 14px;
       @include flexDisplay();
@@ -156,8 +172,12 @@ header {
       //gap: 5px;
       h1 {
           font-family: $cocoFont;
-          font-size: 18px;
-          font-weight: normal;                  
+          
+          font-weight: normal;  
+          margin-top: 5px;
+          
+          font-size: 25px;
+          line-height: 27px;                
       }
       p {
           font-size: 16px;
@@ -168,11 +188,11 @@ header {
   }
 
   .intro-descr {
-      margin: 24px;
-      width: 85%;
-      border: 3px solid $ashColor;
+    margin: 10px;
+    width: 95%;
+      border: 1px solid $ashColor;
      
-      background-color: none;
+      background-color: white;
       p {
           color: $backColor;
           font-family: $latoFont;
@@ -186,7 +206,7 @@ header {
 
   .when {
       margin: 0 12px;
-      margin-bottom: 60px;
+      margin-bottom: 40px;
     h2 {              
         color: $backColor; 
         font-size: 18px; 
@@ -197,23 +217,26 @@ header {
     p {
         font-family: $latoFont;
         color: $backColor;
-        font-size: 14px;
+        font-size: 12px;
         font-weight: bold;
     }
   }
 
 .main-prog {
-      background-color: black;
+      //background-color: black;
+      background-image: url("images/speaker-bg-img2.jpg");
+      background-repeat: none;
+      background-size: contain;
       @include flexDisplay(column);
       justify-content: center;
       align-items: center;
 
       .program-heading {
         h3 {
-            font-family: $cocoFont;
+            font-family: $latoFont;
             color: white;
-            margin: 36px;
-            font-weight: normal;
+            margin: 28px;
+            font-weight: bolder;
          }  
        } 
        .prog-list {
@@ -224,7 +247,7 @@ header {
         @include flexDisplay(row);
         justify-content: space-between;
         align-items: center;
-        gap: 10px;
+        //gap: 10px;
         padding: 12px;
 
         
@@ -274,15 +297,22 @@ header {
    width: 100%;
     background-color: white;
     //border: 1px solid red;
-    margin: 24px 0;
+    padding-bottom: 24px;
+    padding-top: 24px;
     .f-speaker {
+
         color:$backColor;
         font-family: $latoFont;
         text-align: center;
         font-weight: 600;
-        font-size: 18px;
+        font-size: 14px;
         margin-bottom: 24px;
         
+    }
+
+    .speaker-items {
+        @include flexDisplay();
+        gap: 25px;
     }
 
     .speaker-content {
@@ -340,10 +370,10 @@ header {
 
 .about-home {
     @include flexDisplay();
-    margin-top: 24px;
+    margin-top: 70px;
     align-items: center;
     justify-content: center;
-    background-color: $ashColor;
+    //background-color: $ashColor;
     .page-topic{
        justify-content: center;
        align-items: center;
@@ -351,27 +381,29 @@ header {
            font-family: $cocoFont;
            text-align: center;
            margin: 0 12px;
+           line-height: 35px;
        }
 
        p {
            font-family: $latoFont;
            margin: 12px;
            font-weight: bold;
+           font-size: 16px;
        }
     }
     .about-descr {
         text-align: center; 
-        border: 3px solid rgb(197, 197, 197);
-        width: 80%;
+        border: 1px solid rgb(197, 197, 197);
+        width: 90%;
         background-color: white;      
 
         p {
             font-family: $latoFont;
             font-weight: 600;
             color: $backColor;
-          font-size: 12px;
-          line-height: 24px;
-          margin: 24px 5px;
+          font-size: 10px;
+          line-height: 18px;
+          margin: 10px 12px;
           
         }
     }
@@ -379,12 +411,12 @@ header {
     
          
     p {
-            margin: 24px 18px;
+            margin: 16px 18px;
             font-family: $latoFont;
             font-weight: 600;
             text-align: center;
-            line-height: 20px;
-            font-size: 12px;
+            line-height: 14px;
+            font-size: 10px;
             span {
                 text-decoration: underline;
                 font-weight: 900;
@@ -399,33 +431,37 @@ header {
     justify-content: center;
     align-items: center;
     border-bottom: 1px solid $ashColor;
+    background-color: white;
 
    h2 {
        text-align: center;
        color: $backColor;
        font-family: $latoFont;
-       font-size: 21px;
+       font-size: 16px;
        font-weight: bold;
        
-       margin: 32px 48px 24px 48px;
+       margin: 20px 48px 20px 48px;
    }
 
    p {
-       margin: 0 48px 24px 48px;
+       margin: 0 38px 24px 38px;
        font-family: $latoFont;
-       font-size: 11px;
+       font-size: 10px;
+       line-height: 15px;
        font-weight: 600;
        text-align: center;
     }
 
     .logo {
-        width: 85%;
+        width: 90%;
         border: 1px solid $ashColor;
-        margin: 32px 0;
+        background-color: white;
+        margin: 0;
         @include flexDisplay();
         justify-content:center;
         align-items: center;
-        padding: 12px;
+        padding: 6px;
+        margin-bottom: 24px;
     }
 }
 
@@ -433,22 +469,25 @@ header {
     @include flexDisplay();
     justify-content: center;
     align-items: center;
-    width: 85%;
-    margin-top: 24px;
+    width: 100%;
+    padding-top: 24px;
+    background-color: white;
     h2 {
         text-align: center;
         font-family: $latoFont;
         font-size: 16px;
         font-weight: bold;
-        color: $backColor;       
+        color: $backColor; 
+        width: 80%;      
     }
 
     p {
         text-align: center;
         font-family: $latoFont;
-        font-size: 11px;
+        font-size: 10px;
         font-weight: 600;
         margin: 24px 0;
+        width: 80%;
     }
 
     .workshop-img {
@@ -459,29 +498,72 @@ header {
         align-items: center;
         
         .img-1 {
-            width: 90%;       
-         
+            width: 242px;
+            height: 163px;
+            position: absolute;
+          
         }  
-        .cover {
-            font-family: $latoFont;
-            color: $orangeColor;
-            font-weight: 600;
+        .cover-text-1 {
+            font-family: $cocoFont;
+            color: white;
+            position: relative;
+            margin-top: -109px;
+            text-align: center;
+                         
         }
-        
+
+        .cover-box {
+            height: 162px;
+            width: 100%;
+            background-color: rgb(236, 82, 66);
+            margin-top: 2px;
+            position: relative;
+            opacity: 0.5;
+        }
 
         .img-2 {
-            width: 90%;      
+            width: 100%;
+            height: 162px;      
                    
+        }
+
+        .cover-text-2 {
+            font-family: $cocoFont;
+            color: white;
+            position: relative;
+            margin-top: -109px;
+            text-align: center;
+                         
+        }
+
+        .cover-box-2 {
+            height: 162px;
+            width: 100%;
+            background-color: rgb(236, 82, 66);
+            margin-top: -165px;
+            position: relative;
+            opacity: 0.5;
         }
     }
 
     }
 
-    .grpImage-cont {
-        width: 100%;
+    .grpImage-cont-1 {
+        width: 90%;
         height: 100%;
+        margin-bottom: 60px;
         
     }
+
+    .grpImage-cont-2 {
+        width: 90%;
+        height: 100%;
+        margin-bottom: 77px;
+        
+    }
+
+    
+    
 
     .partner {
         background-color: #272a31;
@@ -543,10 +625,13 @@ header {
     footer {
         @include flexDisplay(row); 
         justify-content: center;
+        align-items: center;
         width: 100%;
+        background-color: white;
         //gap:20px;
         .footer-logo {
             padding: 4px;
+           // width: 50%;
            
             img{
             width: 50px;
@@ -561,6 +646,14 @@ header {
             align-self: flex-end;
             justify-self: flex-end;
             padding: 10px;
+            width: 50%;
+        }
+    }
+
+    .footer-index {
+        background-color: $backColor;
+        .footer-text {
+            color: $ashColor;
         }
     }
 
@@ -579,6 +672,13 @@ header {
     .desktop-text {
         display: none;
     }
+
+    .workshop-img-desk {
+        display: none;
+    }
+    /*.partner {
+        display: none;
+    }*/
 
     @media screen and (min-width: 768px) {
        header {
@@ -688,7 +788,7 @@ header {
            }
 
         .home-page {
-            margin-top: 100px;
+            margin-top: 80px;
 
             .page-topic {
                 margin: 75px 125px 12px 125px;
@@ -697,8 +797,9 @@ header {
                 }
 
                 h1 {
-                    font-size: 38px;
-                    width: 515px;
+                    font-size: 48px;
+                    width: 550px;
+                    line-height: 50px;
                 }
             }
            .intro-descr {
@@ -775,6 +876,7 @@ header {
                grid-template-rows: 1fr 1fr 1fr;
                width: 80%;
                margin: 0 65px;
+               padding-bottom: 60px;
            }
         }
 
@@ -812,7 +914,7 @@ header {
     }
 
     .creative {
-        margin-bottom: 14px;
+        //margin-bottom: 14px;
         p {
             width: 65%;
             line-height: 15px;
@@ -826,6 +928,8 @@ header {
     }
 
     .past-summit {
+
+        
         h2 {
             font-size: 24px;
         }
@@ -834,23 +938,135 @@ header {
             font-size: 12px;
         }
         .workshop-img {
-            @include flexDisplay(row);
-            width: 70%;
+            display: none;
+            }
+    }
+
+    .workshop-img-desk {
+        @include flexDisplay(row);
+        width: 50%;
             gap: 0;
-        }
+            justify-content: center;
+            align-items: center;
+    }
+
+    .img-D1 {
+        width: 270px;
+    height: 170px;
+    
+
+       
+      
+    }  
+    .cover-text-D1 {
+        color: white;
+    font-family: "COCOGOOSE", sans-serif;
+    font-size: 14px;
+    margin-top: -100px;
+    text-align: center;
+    position: relative;
+    z-index: 5;
+                     
+    }
+
+    .cover-box-D1 {
+        width: 270px;
+        height: 170px;
+        background-color: #ec5242;
+        opacity: 0.5;
+        margin-top: -175px;
+        position: absolute;
+        z-index: 2;
+       
+    }
+
+    .img-D2 {
+         width: 270px;
+         height: 170px;   
+               
+    }
+
+    .cover-text-D2 {
+        color: white;
+    font-family: "COCOGOOSE", sans-serif;
+    font-size: 14px;
+    text-align: center;
+    margin-top: -100px;
+    z-index: 20;
+    position: relative;
+        
+                     
+    }
+
+    .cover-box-D2 {
+        height: 170px;
+    width: 270px;
+    background-color: #ec5242;
+    opacity: 0.5;
+    margin-top: -175px;
+    position: absolute;
+    z-index: 15;
+    }
+        
+    
+
+    .grpImage-cont-D1 {
+        width: 90%;
+        height: 100%;
+        margin: 3px;
+        
+        
+    }
+
+    .grpImage-cont-D2 {
+        width: 90%;
+        height: 100%;
+        margin: 3px;
+        
+        
     }
 
     .partner {
-        display: none;
+        height: 160px;
+    }
+
+    .footer-index {
+        display: grid;
+        grid-template-columns: 30% 70%;
+        justify-content: center;
+        align-items: flex-start;
+        background-color: white;
+        gap: 12px;
+        height: 160%;
+
+        .footer-logo {
+            img {
+                width: 100px;
+            }
+        }
+
+        .footer-text {
+            justify-self: flex-start;
+            margin-left: 24;
+            color: $backColor;
+            font-size: 12px;
+        }
     }
 
     footer {
         background-color: #272a31;
         height: 100px;
+        //margin-top: 125px;
+        
 
         .footer-logo {
             align-self: center;
             justify-self: center;
+            width: 50%;
+            img {
+                align-self: flex-end;
+                margin-left: 85%;
+            }
         }
 
         .footer-text {
@@ -858,10 +1074,28 @@ header {
             font-size: 10px;
             align-self: center;
             justify-self: center;
+            width: 50%;
+            
         }
     }
+
+    .speakers {
+        background-color: $ashColor;
+    }
+
+    .bg-image {
+        background-color: #d3d3d3;
+    opacity: 0.7;
+    position: absolute;
+    z-index: -1;
+    width: 104%;
+    height: 1197px;
+    }
+
+    
+    }
         
-       } 
+       
     
 
     
