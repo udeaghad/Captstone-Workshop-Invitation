@@ -104,8 +104,9 @@ speakerDetails[i].appendChild(speakerStory);
 const moreBar = document.querySelector('.more-bar');
 const moreBtn = document.querySelector(".more-btn-ctn");
 const speakerBox = document.querySelectorAll(".speaker-content")
-console.log(speakerBox[5])
-const speakerId = document.getElementsByClassName("speaker-name")
+
+
+const moreBtnCont = document.querySelector(".more-bar-ctn")
 
 moreBtn.addEventListener("click", () => {
 
@@ -113,11 +114,19 @@ moreBtn.addEventListener("click", () => {
   if ( speakerBox[i].className == "speaker-content" ){
    
     speakerBox[i].classList = "hide-speaker";
+    moreBtnCont.innerText = "More"
   } else if (speakerBox[i].className == "hide-speaker"){
     speakerBox[i].classList = "speaker-content";
+    moreBtnCont.innerText = "Less"
   }  
+  
 }
+
+ moreBar.classList.toggle("turn")
+
 })
+
+
 
 
 const navBar = document.querySelector('.nav-bar');
