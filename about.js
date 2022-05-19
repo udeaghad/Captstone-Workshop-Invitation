@@ -9,3 +9,4 @@ navBar.addEventListener('click', () => {
 navList.addEventListener('click', () => {
   navBar.click();
 });
+

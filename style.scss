@@ -661,6 +661,48 @@ header {
         }
     }
 
+    .more-btn-ctn {
+        height: 45px;
+        width: 100%;
+        background-color: white;
+        border: 2px solid $orangeColor;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 5px;
+
+        .more-bar {
+            width: 14px;
+            height: 3px;
+            background-color: $backColor;
+            transition: all 0.8s ease;
+
+        }
+
+        .more-bar-ctn {
+            width: 15%;           
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            transition: right 8s ease;
+            transform: rotate (180deg);
+        }
+        .btn-bar-1 {
+            transform: rotateZ(-45deg) translate(-3px, 4px);
+        }
+
+        
+        .btn-bar-2 {
+            transform: rotateZ(45deg) translate(-8px, 4px);
+        }
+    }
+.hide-speaker {
+    display: none;
+}
     .desktop-container {
         display: none;
     }
@@ -896,8 +938,12 @@ header {
                display: grid;
                grid-template-columns: 1fr 1fr;
                grid-template-rows: 1fr 1fr 1fr;
-               width: 80%;
-               margin: 0 65px;
+               grid-template-rows: 1fr 1fr 1fr;
+               width: 65%;
+    
+               justify-content: center;
+               align-items: center;
+               margin: 0px 15%;
                padding-bottom: 60px;
            }
         }

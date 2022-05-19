@@ -54,6 +54,7 @@ speakerItems.classList.add("speaker-items");
 speakerContainer.appendChild(speakerItems);
 
 for (let i = 0;i < speakerName.length; i+=1){
+
 const speakerBox = document.createElement("div");
 speakerBox.classList.add("speaker-content");
 speakerItems.appendChild(speakerBox);
@@ -71,7 +72,7 @@ speakerBox.appendChild(speakerDetails);
 const speakerPhoto = document.querySelectorAll(".photo");
 console.log(speakerPhoto.length)
 for (let i =0;i < speakerPhoto.length; i+=1){
-    console.log("I am running")
+  
 const imgSpeaker = document.createElement('img');
 imgSpeaker.classList.add("speaker-img");
 imgSpeaker.src = speakerImage(i);
@@ -98,6 +99,26 @@ speakerStory.innerHTML = speakerAbout(i)
 speakerDetails[i].appendChild(speakerStory);
 
 }
+
+//console.log(nameOfSpeaker(5))
+const moreBar = document.querySelector('.more-bar');
+const moreBtn = document.querySelector(".more-btn-ctn");
+const speakerBox = document.querySelectorAll(".speaker-content")
+console.log(speakerBox[5])
+const speakerId = document.getElementsByClassName("speaker-name")
+
+moreBtn.addEventListener("click", () => {
+
+  for (let i = speakerBox.length-1; i >= 2; i-=1){
+  if ( speakerBox[i].className == "speaker-content" ){
+   
+    speakerBox[i].classList = "hide-speaker";
+  } else if (speakerBox[i].className == "hide-speaker"){
+    speakerBox[i].classList = "speaker-content";
+  }  
+}
+})
+
 
 const navBar = document.querySelector('.nav-bar');
 const menuBar = document.querySelector('.menu-bar');

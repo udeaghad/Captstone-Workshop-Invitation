@@ -787,6 +787,72 @@ footer .footer-text {
   color: #d3d3d3;
 }
 
+.more-btn-ctn {
+  height: 45px;
+  width: 100%;
+  background-color: white;
+  border: 2px solid #ec5242;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 5px;
+}
+
+.more-btn-ctn .more-bar {
+  width: 14px;
+  height: 3px;
+  background-color: #272a31;
+  -webkit-transition: all 0.8s ease;
+  transition: all 0.8s ease;
+}
+
+.more-btn-ctn .more-bar-ctn {
+  width: 15%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  -webkit-transition: right 8s ease;
+  transition: right 8s ease;
+  -webkit-transform: rotate 180deg;
+          transform: rotate 180deg;
+}
+
+.more-btn-ctn .btn-bar-1 {
+  -webkit-transform: rotateZ(-45deg) translate(-3px, 4px);
+          transform: rotateZ(-45deg) translate(-3px, 4px);
+}
+
+.more-btn-ctn .btn-bar-2 {
+  -webkit-transform: rotateZ(45deg) translate(-8px, 4px);
+          transform: rotateZ(45deg) translate(-8px, 4px);
+}
+
+.hide-speaker {
+  display: none;
+}
+
 .desktop-container {
   display: none;
 }
@@ -1056,8 +1122,15 @@ footer .footer-text {
         grid-template-columns: 1fr 1fr;
     -ms-grid-rows: 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
-    width: 80%;
-    margin: 0 65px;
+    grid-template-rows: 1fr 1fr 1fr;
+    width: 65%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 0px 15%;
     padding-bottom: 60px;
   }
   .about-page .about-home {
