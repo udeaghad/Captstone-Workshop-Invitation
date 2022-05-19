@@ -94,7 +94,6 @@ for (let i = 0; i < speakerDetails.length; i += 1) {
   speakerDetails[i].appendChild(speakerStory);
 }
 
-const moreBar = document.querySelector('.more-bar');
 const moreBtn = document.querySelector('.more-btn-ctn');
 const speakerBox = document.querySelectorAll('.speaker-content');
 
@@ -110,8 +109,6 @@ moreBtn.addEventListener('click', () => {
       moreBtnCont.innerText = 'Less';
     }
   }
-
-  
 });
 
 const navBar = document.querySelector('.nav-bar');

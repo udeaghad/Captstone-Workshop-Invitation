@@ -10,7 +10,7 @@ This project was done as my first capstone project and it was designed to be a l
 - javascript
 
 ## Live Demo
-https://udeaghad.github.io/Create-mobile-version/
+https://udeaghad.github.io/Captstone-Workshop-Invitation/
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
